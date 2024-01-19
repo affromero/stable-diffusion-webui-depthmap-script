@@ -25,8 +25,8 @@ from skimage.transform import resize
 import copy
 import torch
 import os
-from inpaint.utils import refine_depth_around_edge, smooth_cntsyn_gap
-from inpaint.utils import require_depth_edge, filter_irrelevant_edge_new, open_small_mask
+from stable_diffusion_webui_depthmap.inpaint.utils import refine_depth_around_edge, smooth_cntsyn_gap
+from stable_diffusion_webui_depthmap.inpaint.utils import require_depth_edge, filter_irrelevant_edge_new, open_small_mask
 from skimage.feature import canny
 from scipy import ndimage
 import time

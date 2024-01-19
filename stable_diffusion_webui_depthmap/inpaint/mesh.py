@@ -19,11 +19,11 @@ import time
 import copy
 import torch
 import os
-from inpaint.utils import path_planning, open_small_mask, clean_far_edge, refine_depth_around_edge
-from inpaint.utils import refine_color_around_edge, filter_irrelevant_edge_new, require_depth_edge, clean_far_edge_new
-from inpaint.utils import create_placeholder, refresh_node, find_largest_rect
-from inpaint.mesh_tools import get_depth_from_maps, get_map_from_ccs, get_edge_from_nodes, get_depth_from_nodes, get_rgb_from_nodes, crop_maps_by_size, convert2tensor, recursive_add_edge, update_info, filter_edge, relabel_node, depth_inpainting
-from inpaint.mesh_tools import refresh_bord_depth, enlarge_border, fill_dummy_bord, extrapolate, fill_missing_node, incomplete_node, get_valid_size, dilate_valid_size, size_operation
+from stable_diffusion_webui_depthmap.inpaint.utils import path_planning, open_small_mask, clean_far_edge, refine_depth_around_edge
+from stable_diffusion_webui_depthmap.inpaint.utils import refine_color_around_edge, filter_irrelevant_edge_new, require_depth_edge, clean_far_edge_new
+from stable_diffusion_webui_depthmap.inpaint.utils import create_placeholder, refresh_node, find_largest_rect
+from stable_diffusion_webui_depthmap.inpaint.mesh_tools import get_depth_from_maps, get_map_from_ccs, get_edge_from_nodes, get_depth_from_nodes, get_rgb_from_nodes, crop_maps_by_size, convert2tensor, recursive_add_edge, update_info, filter_edge, relabel_node, depth_inpainting
+from stable_diffusion_webui_depthmap.inpaint.mesh_tools import refresh_bord_depth, enlarge_border, fill_dummy_bord, extrapolate, fill_missing_node, incomplete_node, get_valid_size, dilate_valid_size, size_operation
 import transforms3d
 import random
 from functools import reduce

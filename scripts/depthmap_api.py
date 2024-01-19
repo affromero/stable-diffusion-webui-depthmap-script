@@ -13,10 +13,10 @@ import gradio as gr
 from typing import Dict, List
 from modules.api import api
 
-from src.core import core_generation_funnel, run_makevideo
-from src.misc import SCRIPT_VERSION
-from src import backbone
-from src.common_constants import GenerationOptions as go
+from stable_diffusion_webui_depthmap.core import core_generation_funnel, run_makevideo
+from stable_diffusion_webui_depthmap.misc import SCRIPT_VERSION
+from stable_diffusion_webui_depthmap import backbone
+from stable_diffusion_webui_depthmap.common_constants import GenerationOptions as go
 
 
 def encode_to_base64(image):

@@ -4,11 +4,11 @@ from modules import shared
 import modules.scripts as scripts
 from PIL import Image
 
-from src import backbone
-from src import common_ui
-from src.core import core_generation_funnel
-from src.gradio_args_transport import GradioComponentBundle
-from src.misc import *
+from stable_diffusion_webui_depthmap import backbone
+from stable_diffusion_webui_depthmap import common_ui
+from stable_diffusion_webui_depthmap.core import core_generation_funnel
+from stable_diffusion_webui_depthmap.gradio_args_transport import GradioComponentBundle
+from stable_diffusion_webui_depthmap.misc import *
 
 
 class Script(scripts.Script):

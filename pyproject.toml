@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "stable_diffusion_webui_depthmap"
+version = "0.1.0"
+description = ""
+authors = ["Andres Romero <me@afromero.co>"]
+readme = "README.md"
+packages = [{include = "stable_diffusion_webui_depthmap"}]
+
+[tool.poetry.dependencies]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

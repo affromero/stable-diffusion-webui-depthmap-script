@@ -10,23 +10,23 @@ import torch
 from torchvision.transforms import Compose, transforms
 
 # midas imports
-from dmidas.dpt_depth import DPTDepthModel
-from dmidas.midas_net import MidasNet
-from dmidas.midas_net_custom import MidasNet_small
-from dmidas.transforms import Resize, NormalizeImage, PrepareForNet
+from stable_diffusion_webui_depthmap.dmidas.dpt_depth import DPTDepthModel
+from stable_diffusion_webui_depthmap.dmidas.midas_net import MidasNet
+from stable_diffusion_webui_depthmap.dmidas.midas_net_custom import MidasNet_small
+from stable_diffusion_webui_depthmap.dmidas.transforms import Resize, NormalizeImage, PrepareForNet
 # zoedepth
-from dzoedepth.models.builder import build_model
-from dzoedepth.utils.config import get_config
+from stable_diffusion_webui_depthmap.dzoedepth.models.builder import build_model
+from stable_diffusion_webui_depthmap.dzoedepth.utils.config import get_config
 # AdelaiDepth/LeReS imports
-from lib.multi_depth_model_woauxi import RelDepthModel
-from lib.net_tools import strip_prefix_if_present
-from pix2pix.models.pix2pix4depth_model import Pix2Pix4DepthModel
+from stable_diffusion_webui_depthmap.lib.multi_depth_model_woauxi import RelDepthModel
+from stable_diffusion_webui_depthmap.lib.net_tools import strip_prefix_if_present
+from stable_diffusion_webui_depthmap.pix2pix.models.pix2pix4depth_model import Pix2Pix4DepthModel
 # pix2pix/merge net imports
-from pix2pix.options.test_options import TestOptions
+from stable_diffusion_webui_depthmap.pix2pix.options.test_options import TestOptions
 
 # Our code
-from src.misc import *
-from src import backbone
+from stable_diffusion_webui_depthmap.misc import *
+from stable_diffusion_webui_depthmap import backbone
 
 global depthmap_device
 

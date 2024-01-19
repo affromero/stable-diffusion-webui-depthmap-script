@@ -5,9 +5,9 @@ from PIL import Image
 import numpy as np
 import os
 
-from src import core
-from src import backbone
-from src.common_constants import GenerationOptions as go
+from stable_diffusion_webui_depthmap import core
+from stable_diffusion_webui_depthmap import backbone
+from stable_diffusion_webui_depthmap.common_constants import GenerationOptions as go
 
 
 def open_path_as_images(path, maybe_depthvideo=False):

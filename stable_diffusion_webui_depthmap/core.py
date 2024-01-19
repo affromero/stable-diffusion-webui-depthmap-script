@@ -15,19 +15,19 @@ import platform
 import math
 
 # Our code
-from src.misc import *
-from src.common_constants import GenerationOptions as go
-from src.common_constants import *
-from src.stereoimage_generation import create_stereoimages
-from src.normalmap_generation import create_normalmap
-from src.depthmap_generation import ModelHolder
-from src import backbone
+from stable_diffusion_webui_depthmap.misc import *
+from stable_diffusion_webui_depthmap.common_constants import GenerationOptions as go
+from stable_diffusion_webui_depthmap.common_constants import *
+from stable_diffusion_webui_depthmap.stereoimage_generation import create_stereoimages
+from stable_diffusion_webui_depthmap.normalmap_generation import create_normalmap
+from stable_diffusion_webui_depthmap.depthmap_generation import ModelHolder
+from stable_diffusion_webui_depthmap import backbone
 
 # 3d-photo-inpainting imports
-from inpaint.mesh import write_mesh, read_mesh, output_3d_photo
-from inpaint.networks import Inpaint_Color_Net, Inpaint_Depth_Net, Inpaint_Edge_Net
-from inpaint.utils import path_planning
-from inpaint.bilateral_filtering import sparse_bilateral_filtering
+from stable_diffusion_webui_depthmap.inpaint.mesh import write_mesh, read_mesh, output_3d_photo
+from stable_diffusion_webui_depthmap.inpaint.networks import Inpaint_Color_Net, Inpaint_Depth_Net, Inpaint_Edge_Net
+from stable_diffusion_webui_depthmap.inpaint.utils import path_planning
+from stable_diffusion_webui_depthmap.inpaint.bilateral_filtering import sparse_bilateral_filtering
 
 global video_mesh_data, video_mesh_fn
 video_mesh_data = None
@@ -262,7 +262,7 @@ def core_generation_funnel(outpath, inputimages, inputdepthmaps, inputnames, inp
                 yield count, 'normalmap', normalmap
 
             if inp[go.GEN_HEATMAP]:
-                from dzoedepth.utils.misc import colorize
+                from stable_diffusion_webui_depthmap.dzoedepth.utils.misc import colorize
                 heatmap = Image.fromarray(colorize(img_output, cmap='inferno'))
                 yield count, 'heatmap', heatmap
 
@@ -427,7 +427,7 @@ def run_3dphoto(device, img_rgb, img_depth, inputnames, outpath, gen_inpainted_m
 
             print(f"\nGenerating inpainted mesh .. (go make some coffee) ..")
 
-            # from inpaint.utils.get_MiDaS_samples
+            # from stable_diffusion_webui_depthmap.inpaint.utils.get_MiDaS_samples
             W = img_rgb[count].width
             H = img_rgb[count].height
             int_mtx = np.array([[max(H, W), 0, W // 2], [0, max(H, W), H // 2], [0, 0, 1]]).astype(np.float32)
@@ -534,7 +534,7 @@ def run_3dphoto_videos(mesh_fi, basename, outpath, num_frames, fps, crop_border,
     config['video_postfix'] = video_postfix
     config['ssaa'] = vid_ssaa
 
-    # from inpaint.utils.get_MiDaS_samples
+    # from stable_diffusion_webui_depthmap.inpaint.utils.get_MiDaS_samples
     generic_pose = np.eye(4)
     assert len(config['traj_types']) == len(config['x_shift_range']) == \
            len(config['y_shift_range']) == len(config['z_shift_range']) == len(config['video_postfix']), \
@@ -709,7 +709,7 @@ def depth_edges_mask(depth):
 
 def create_mesh(image, depth, keep_edges=False, spherical=False):
     import trimesh
-    from dzoedepth.utils.geometry import depth_to_points, create_triangles
+    from stable_diffusion_webui_depthmap.dzoedepth.utils.geometry import depth_to_points, create_triangles
     maxsize = backbone.get_opt('depthmap_script_mesh_maxsize', 2048)
 
     # limit the size of the input image

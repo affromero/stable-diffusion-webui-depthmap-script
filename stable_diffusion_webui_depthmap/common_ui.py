@@ -3,12 +3,12 @@ from pathlib import Path
 import gradio as gr
 from PIL import Image
 
-from src import backbone, video_mode
-from src.core import core_generation_funnel, unload_models, run_makevideo
-from src.depthmap_generation import ModelHolder
-from src.gradio_args_transport import GradioComponentBundle
-from src.misc import *
-from src.common_constants import GenerationOptions as go
+from stable_diffusion_webui_depthmap import backbone, video_mode
+from stable_diffusion_webui_depthmap.core import core_generation_funnel, unload_models, run_makevideo
+from stable_diffusion_webui_depthmap.depthmap_generation import ModelHolder
+from stable_diffusion_webui_depthmap.gradio_args_transport import GradioComponentBundle
+from stable_diffusion_webui_depthmap.misc import *
+from stable_diffusion_webui_depthmap.common_constants import GenerationOptions as go
 
 # Ugly workaround to fix gradio tempfile issue
 def ensure_gradio_temp_directory():

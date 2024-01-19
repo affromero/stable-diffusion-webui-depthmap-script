@@ -25,9 +25,9 @@
 import json
 import os
 
-from dzoedepth.utils.easydict import EasyDict as edict
+from stable_diffusion_webui_depthmap.dzoedepth.utils.easydict import EasyDict as edict
 
-from dzoedepth.utils.arg_utils import infer_type
+from stable_diffusion_webui_depthmap.dzoedepth.utils.arg_utils import infer_type
 import pathlib
 import platform
 

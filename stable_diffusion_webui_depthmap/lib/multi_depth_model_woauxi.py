@@ -1,5 +1,5 @@
-from lib import network_auxi as network
-from lib.net_tools import get_func
+from stable_diffusion_webui_depthmap.lib import network_auxi as network
+from stable_diffusion_webui_depthmap.lib.net_tools import get_func
 import torch
 import torch.nn as nn
 

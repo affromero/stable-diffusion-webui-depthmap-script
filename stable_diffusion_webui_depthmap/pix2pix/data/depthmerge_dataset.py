@@ -1,6 +1,6 @@
-from pix2pix.data.base_dataset import BaseDataset
-from pix2pix.data.image_folder import make_dataset
-from pix2pix.util.guidedfilter import GuidedFilter
+from stable_diffusion_webui_depthmap.pix2pix.data.base_dataset import BaseDataset
+from stable_diffusion_webui_depthmap.pix2pix.data.image_folder import make_dataset
+from stable_diffusion_webui_depthmap.pix2pix.util.guidedfilter import GuidedFilter
 
 import numpy as np
 import os
